@@ -1,0 +1,20 @@
+server:
+  port: 9859
+spring:
+  application:
+    name: eureka-client1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8848/eureka/
+  instance:
+    instance-id:
+      ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS

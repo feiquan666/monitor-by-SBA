@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="eureka-server" />
+        <module name="monitor-by-SBA" />
+        <module name="sba-server" />
+        <module name="sba-server-client3" />
+        <module name="sba-server-client2" />
+        <module name="sba-server-client1" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="eureka-server" options="-parameters" />
+      <module name="sba-server" options="-parameters" />
+      <module name="sba-server-client1" options="-parameters" />
+      <module name="sba-server-client2" options="-parameters" />
+      <module name="sba-server-client3" options="-parameters" />
+    </option>
+  </component>
+</project>
