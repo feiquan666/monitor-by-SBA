@@ -7,16 +7,21 @@ spring:
     name: eureka-admin
   boot:
     admin:
-      client:
-        enabled: false # 是否注册，默认true
       ui:
         title: "微服务监控"
+  security:
+    user:
+      name: "admin"
+      password: "admin"
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8848/eureka/
   instance:
     instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
 management:
   endpoints:
     web:
@@ -25,3 +30,8 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+
+logging:
+  file:
+    name: simulated-monitor/sbaServer/sbaServer-info.log
+    path: simulated-monitor/sbaServer/

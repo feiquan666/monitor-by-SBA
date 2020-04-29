@@ -18,3 +18,8 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+
+logging:
+  file:
+    name: simulated-monitor/client2/client2-info.log
+    path: simulated-monitor/client2/
