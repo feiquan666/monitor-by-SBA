@@ -1,6 +1,10 @@
 server:
   port: 9857
 spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
   profiles:
     include: MC
   application:
@@ -9,19 +13,14 @@ spring:
     admin:
       ui:
         title: "微服务监控"
-  security:
-    user:
-      name: "admin"
-      password: "admin"
+      discovery:
+        ignored-services: "*admin"
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8848/eureka/
   instance:
     instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
-    metadata-map:
-      user.name: ${spring.security.user.name}
-      user.password: ${spring.security.user.password}
 management:
   endpoints:
     web:
