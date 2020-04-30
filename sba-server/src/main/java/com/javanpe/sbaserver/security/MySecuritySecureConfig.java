@@ -65,6 +65,7 @@ public class MySecuritySecureConfig extends WebSecurityConfigurerAdapter {
 
     /**
      * 通过Java代码配置用户,优先级高于配置文件
+     * Required to provide UserDetailsService for "remember functionality"
     */
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
